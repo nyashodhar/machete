@@ -1,0 +1,5 @@
+module.exports.cors			= require './cors'
+module.exports.error		= require './error'
+module.exports.getsession	= require './getsession'
+module.exports.page			= require './page'
+module.exports.pollsource	= require './pollsource'

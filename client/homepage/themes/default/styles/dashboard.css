@@ -1,0 +1,244 @@
+html {
+    font-size: 12px !important;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 18px !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    html {
+        font-size: 20px !important;
+    }
+}
+
+html,
+body,
+section {
+    height: 100%;
+}
+
+body.noscroll {
+    overflow: hidden;
+}
+
+.dashboard {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    background-color: #ddd !important;
+    font-family: citrixsans-regular, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizelegibility;
+}
+
+.dashboard .global_panel {
+    height: 100%;
+}
+
+.dashboard div.count {
+    position: absolute;
+    height: 2rem;
+    background-color: transparent;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.dashboard div.count span {
+    width: 5rem;
+    background-color: rgba(255, 255, 255, .5);
+    height: 100%;
+    margin-top: .25rem;
+    color: #fff;
+    text-align: center;
+    padding-top: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.dashboard .spinner-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+}
+
+.dashboard .fa-cog {
+    font-size: 5rem;
+    animation: spin 2s infinite linear;
+    transform-origin: 50% 50%;
+    transition: all 2s ease-in-out;
+}
+
+.dashboard .fa-cog.loaded {
+    font-size: 30rem;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.dashboard table {
+    background-color: transparent;
+    border-collapse: collapse;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard table thead,
+.dashboard table thead tr:nth-of-type(even),
+.dashboard table thead tr:nth-of-type(odd) {
+    background: linear-gradient(top, #696969 0%, #3f3f3f 100%);
+}
+
+.dashboard thead input {
+    float: right;
+    width: 100%;
+    height: 1.5rem;
+    margin: 0;
+    border: 0;
+    padding-right: 1.25rem;
+    border-radius: 0.15rem;
+}
+
+.dashboard thead i.fa-times {
+    float: right;
+    top: -1.25rem;
+    position: relative;
+    right: 0.25rem;
+    color: #ccc;
+    text-shadow: none;
+    cursor: pointer;
+    margin-bottom: -1.25rem;
+    transition: color 0.25s ease-in-out;
+}
+
+.dashboard thead i.fa-times:hover {
+    color: #777;
+    transition: color 0.25s ease-in-out;
+}
+
+.dashboard table tbody tr {
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.dashboard table tbody tr:hover {
+    background-color: #efefef;
+    transition: all 0.25s ease-in-out;
+}
+
+.dashboard table thead th {
+    color: #fff;
+    text-shadow: 0px 1px #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboard table tbody td {
+    vertical-align: center;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.7rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.dashboard table td ul {
+    list-style: none;
+    margin: 0;
+    font-size: 0.70rem;
+}
+
+.dashboard table td ul li {}
+
+.dashboard table td span.more {
+    color: #06f;
+    cursor: pointer;
+}
+
+.dashboard table span.stopped,
+.dashboard table span.running {
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 100%;
+    float: left;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    padding-top: 0.2rem;
+    margin-left: 0.7rem;
+    transition: background .25s ease-in-out;
+}
+
+.dashboard table span.stopped {
+    border-color: #CC0000;
+    color: #CC0000;
+    background-color: #FFF4E8;
+}
+
+.dashboard table span.running {
+    border-color: #008C00;
+    color: #008C00;
+    background-color: #E0FFE0;
+}
+
+.dashboard table span.running i {
+    animation: throb 2s infinite;
+}
+
+.dashboard table td {
+    word-break: break-word;
+}
+
+.dashboard table td.name {
+    font-weight: 700;
+    padding-left: 1rem;
+}
+
+.dashboard table td.ip {
+    font-family: monospace;
+}
+
+.hidden {
+    display: none!important;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes throb {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

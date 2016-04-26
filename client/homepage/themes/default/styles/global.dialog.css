@@ -1,0 +1,116 @@
+/* Generic wrapper classes */
+
+dialog {
+    visibility: visible!important;
+    max-width: 100%!important;
+    border: none !important;
+}
+
+dialog.outer {
+    align-items: center !important;
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0 !important;
+    display: flex !important;
+    height: 100% !important;
+    justify-content: center !important;
+    left: 0 !important;
+    overflow: hidden !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 10 !important;
+}
+
+dialog div.row {
+        max-width: 100%!important;
+
+}
+
+dialog.outer.opaque {
+    background-color: rgba(61, 61, 61, 0.9);
+}
+
+dialog.outer div.inner {
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    height: 400px;
+    padding: 1rem;
+    width: 600px;
+
+}
+
+dialog.outer div.inner.opaque {
+    background-color: rgba(49, 44, 44, 0.75);
+}
+
+dialog.outer div.inner h2,
+dialog.outer div.inner h3 {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding-top: 0;
+}
+
+dialog.outer div.inner p {
+    margin: 0.5rem;
+    font-size: 0.8rem;
+}
+
+dialog.outer div.inner button {}
+
+
+/* Spinner classes */
+
+dialog.wait .spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+dialog.wait .spinner {
+    height: 60px;
+    text-align: center;
+    width: 148px;
+}
+
+dialog.wait .spinner h3 {
+    margin-top: 0px;
+}
+
+dialog.wait .spinner > div {
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    animation-fill-mode: both;
+    background-color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+dialog.wait .spinner .bounce1 {
+    animation-delay: -0.32s;
+    background-color: #309ddc;
+}
+
+dialog.wait .spinner .bounce2 {
+    animation-delay: -0.16s;
+    background-color: #000;
+}
+
+dialog.wait div.inner .spinner {
+    background-color: rgba(49, 44, 44, .75);
+    border-radius: 40px;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 10px;
+}
+
+@keyframes bouncedelay {
+    0%,
+    80%,
+    100% {
+        transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+    }
+}

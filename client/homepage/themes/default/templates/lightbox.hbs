@@ -1,0 +1,14 @@
+<div class="row">
+	<div title="Close" class="cancel"><i class="fa fa-times"></i></div>
+	<div class="col-md-offset-1 col-md-10">
+
+		<h4>PubSub Info for {{name}}</h4>
+
+		{{#each instances}}
+			{{#each this.pubSubInfo}}
+				<p>{{{this}}}</p>
+			{{/each}}
+		{{/each}}
+
+	</div>
+</div>

@@ -1,0 +1,11 @@
+{
+	"name"			: "Machete",
+	"description"	: "...",
+	"namespace"		: "sonos",
+	"application"	: "machete",
+	"component"		: "dashboard",
+	"main"			: "app",
+	"event"			: false,
+	"locales"		: ["en-US"],
+	"docco"			: false
+}

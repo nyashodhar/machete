@@ -1,0 +1,26 @@
+dialog.lightbox div.cancel {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 2rem;
+    float: right;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+}
+
+dialog.lightbox div.cancel:hover {
+    transform: scale(1.5, 1.5);
+    transform-origin: center center;
+    transition: transform 0.25s ease-in-out;
+}
+
+dialog.lightbox h4 {
+        margin: 0.5rem 0.5rem 1rem;
+        color: #fff;
+}

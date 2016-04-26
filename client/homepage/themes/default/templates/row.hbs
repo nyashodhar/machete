@@ -1,0 +1,17 @@
+{{#each instances}}
+	<tr id="{{../id}}">
+		<td class="{{#if ../new}}animated fadeIn {{/if}}name" colspan="{{instances.length}}">{{../name}}</td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}dns" colspan="{{instances.length}}">{{../dnsName}}</td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}elb" colspan="{{instances.length}}">{{../elb}}</td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}ip">{{this.ip}}</td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}version">{{this.version}}</td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}status"><span class="animated fadeIn {{#if this.status}}running{{else}}stopped{{/if}}">{{#if this.status}}<i class="fa fa-check"></i>{{else}}Stopped <i class="fa fa-times"></i>{{/if}}</span></td>
+		<td class="{{#if ../new}}animated fadeIn {{/if}}pubsub">
+			{{#if this.pubSubInfo.length}}
+				<span class="more"><strong>{{this.pubSubInfo.length}}</strong> Entries</span>
+			{{else}}
+				N/A
+			{{/if}}
+		</td>
+	</tr>
+{{/each}}

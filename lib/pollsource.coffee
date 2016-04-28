@@ -6,7 +6,7 @@ cookie			= require 'cookie'
 signature		= require 'cookie-signature'
 util			= require 'util'
 
-URL	= 'http://10.177.6.231:8080/environments/getinfo'
+URL	= 'http://localhost:8080/environments/getinfo'
 KEY	= 'dashboard'
 POL = 300000
 

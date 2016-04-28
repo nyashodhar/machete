@@ -72,6 +72,8 @@ app
 		secret	: (secret = 'keyboard ecat')
 		store	: new RedisStore()
 	))
+	.use(express.static(__dirname + '/public'));
+
 
 
 # -----------------------------------------------------------------------------

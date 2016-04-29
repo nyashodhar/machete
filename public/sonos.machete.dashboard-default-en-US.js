@@ -1,5 +1,5 @@
 /* File: sonos.machete.dashboard-default-en-US.js */
-/* Generated on Fri Apr 29 2016 12:00:51 GMT-0700 (PDT) by yashodhar.narvaneni */
+/* Generated on Fri Apr 29 2016 12:07:05 GMT-0700 (PDT) by yashodhar.narvaneni */
 
 (function( /*! Packaged using Combine.js v2.6.0 by Michael Holt !*/ ) {
 
@@ -1135,33 +1135,6 @@
     });
 
 
-    /* Injected stylesheet for dashboard-lightbox-default */
-    if (!document.getElementById('dashboard-lightbox-default')) {
-        var elem = document.createElement('style');
-        elem.setAttribute('id', 'dashboard-lightbox-default');
-        elem.setAttribute('type', 'text/css');
-        elem.setAttribute('media', 'all');
-        var stylesheet = 'dialog.lightbox div.cancel{position:fixed;top:1.25rem;right:1.25rem;font-size:2rem;float:right;width:3rem;height:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-shadow:2px 2px 4px rgba(0,0,0,.5);cursor:pointer;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox div.cancel:hover{-webkit-transform:scale(1.5,1.5);-ms-transform:scale(1.5,1.5);transform:scale(1.5,1.5);-webkit-transform-origin:center center;-ms-transform-origin:center center;transform-origin:center center;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox h4{margin:.5rem .5rem 1rem;color:#fff}';
-        if (elem.styleSheet && document.documentMode < 9) {
-            elem.styleSheet.cssText = stylesheet;
-        } else {
-            elem.innerHTML = stylesheet;
-        }
-        [].slice.call(document.getElementsByTagName('head')[0].children).some(function(tag) {
-            if ('style' === tag.tagName.toLowerCase() || 'link' === tag.tagName.toLowerCase()) {
-                for (var next = tag.nextSibling; next && 1 !== next.nodeType;) {
-                    next = next.nextSibling;
-                }
-                if (next && ('style' !== next.tagName.toLowerCase() && 'link' !== next.tagName.toLowerCase())) {
-                    return next.parentNode.insertBefore(elem, next), !0;
-                }
-            } else {
-                return tag.parentNode.insertBefore(elem, tag.parentNode.firstChild), !1;
-            }
-        });
-    }
-
-
     /* Injected stylesheet for dashboard-dashboard-default */
     if (!document.getElementById('dashboard-dashboard-default')) {
         var elem = document.createElement('style');
@@ -1215,13 +1188,40 @@
         });
     }
 
+
+    /* Injected stylesheet for dashboard-lightbox-default */
+    if (!document.getElementById('dashboard-lightbox-default')) {
+        var elem = document.createElement('style');
+        elem.setAttribute('id', 'dashboard-lightbox-default');
+        elem.setAttribute('type', 'text/css');
+        elem.setAttribute('media', 'all');
+        var stylesheet = 'dialog.lightbox div.cancel{position:fixed;top:1.25rem;right:1.25rem;font-size:2rem;float:right;width:3rem;height:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-shadow:2px 2px 4px rgba(0,0,0,.5);cursor:pointer;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox div.cancel:hover{-webkit-transform:scale(1.5,1.5);-ms-transform:scale(1.5,1.5);transform:scale(1.5,1.5);-webkit-transform-origin:center center;-ms-transform-origin:center center;transform-origin:center center;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox h4{margin:.5rem .5rem 1rem;color:#fff}';
+        if (elem.styleSheet && document.documentMode < 9) {
+            elem.styleSheet.cssText = stylesheet;
+        } else {
+            elem.innerHTML = stylesheet;
+        }
+        [].slice.call(document.getElementsByTagName('head')[0].children).some(function(tag) {
+            if ('style' === tag.tagName.toLowerCase() || 'link' === tag.tagName.toLowerCase()) {
+                for (var next = tag.nextSibling; next && 1 !== next.nodeType;) {
+                    next = next.nextSibling;
+                }
+                if (next && ('style' !== next.tagName.toLowerCase() && 'link' !== next.tagName.toLowerCase())) {
+                    return next.parentNode.insertBefore(elem, next), !0;
+                }
+            } else {
+                return tag.parentNode.insertBefore(elem, tag.parentNode.firstChild), !1;
+            }
+        });
+    }
+
     /* Compiled HandlebarsJS templates for the "default" theme */
     window.Handlebars && window.Handlebars.set({
         "dashboard": {
             "dashboard": {
                 "compiler": [6, ">= 2.0.0-beta.1"],
                 "main": function(depth0, helpers, partials, data) {
-                    return "<div data-syringe-add=\"machete.$els.sp\" class=\"animated bounceInDown global_panel row\">\n	<div class=\"spinner-wrapper\">\n		<i class=\"fa fa-cog\"></i>\n	</div>\n</div>\n\n<!-- <div data-syringe-add=\"machete.$els.cn\" class=\"count hidden animated\"><span>Cached</span></div> -->\n<div><h1>SONOS Dev-OPS Dashboard</h1></div>\n\n<div data-syringe-add=\"machete.$els.tb\" class=\"hidden animated\">\n	<div class=\"grid\" style=\"background-color:#FFFFFF\"></div>\n</div>	";
+                    return "<div data-syringe-add=\"machete.$els.sp\" class=\"animated bounceInDown global_panel row\">\n	<div class=\"spinner-wrapper\">\n		<i class=\"fa fa-cog\"></i>\n	</div>\n</div>\n\n<!-- <div data-syringe-add=\"machete.$els.cn\" class=\"count hidden animated\"><span>Cached</span></div> -->\n<div style=\"margin-top:10px; margin-left:10px;\"><h1>SONOS Dev-OPS Dashboard</h1></div>\n\n<div data-syringe-add=\"machete.$els.tb\" class=\"hidden animated\">\n	<div class=\"grid\" style=\"background-color:#FFFFFF\"></div>\n</div>	";
                 },
                 "useData": true
             },
@@ -1300,6 +1300,28 @@
                     "useData": true
                 }
             },
+            "row": {
+                "1": function(depth0, helpers, partials, data, blockParams, depths) {
+                    var stack1, alias1 = this.lambda,
+                        alias2 = this.escapeExpression;
+
+                    return "	<div class=\"grid-item\">\n		<div>\n			<b>" + alias2(alias1((depths[1] != null ? depths[1].name : depths[1]), depth0)) + " </b> \n		</div>\n		<div>\n			<b>DNSName: </b>" + alias2(alias1((depths[1] != null ? depths[1].dnsName : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>ELB: </b> " + alias2(alias1((depths[1] != null ? depths[1].elb : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>IP: </b> " + alias2(alias1((depth0 != null ? depth0.ip : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Version: </b> " + alias2(alias1((depth0 != null ? depth0.version : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Status: </b> " + ((stack1 = alias1((depth0 != null ? depth0.status : depth0), depth0)) != null ? stack1 : "") + "\n		</div>\n	</div>\n";
+                },
+                "compiler": [6, ">= 2.0.0-beta.1"],
+                "main": function(depth0, helpers, partials, data, blockParams, depths) {
+                    var stack1;
+
+                    return ((stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.instances : depth0), {
+                        "name": "each",
+                        "hash": {},
+                        "fn": this.program(1, data, 0, blockParams, depths),
+                        "inverse": this.noop,
+                        "data": data
+                    })) != null ? stack1 : "");
+                },
+                "useData": true,
+                "useDepths": true
+            },
             "lightbox": {
                 "1": function(depth0, helpers, partials, data) {
                     var stack1;
@@ -1334,28 +1356,6 @@
                     })) != null ? stack1 : "") + "\n	</div>\n</div>";
                 },
                 "useData": true
-            },
-            "row": {
-                "1": function(depth0, helpers, partials, data, blockParams, depths) {
-                    var stack1, alias1 = this.lambda,
-                        alias2 = this.escapeExpression;
-
-                    return "	<div class=\"grid-item\">\n		<div>\n			<b>" + alias2(alias1((depths[1] != null ? depths[1].name : depths[1]), depth0)) + " </b> \n		</div>\n		<div>\n			<b>DNSName: </b>" + alias2(alias1((depths[1] != null ? depths[1].dnsName : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>ELB: </b> " + alias2(alias1((depths[1] != null ? depths[1].elb : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>IP: </b> " + alias2(alias1((depth0 != null ? depth0.ip : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Version: </b> " + alias2(alias1((depth0 != null ? depth0.version : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Status: </b> " + ((stack1 = alias1((depth0 != null ? depth0.status : depth0), depth0)) != null ? stack1 : "") + "\n		</div>\n	</div>\n";
-                },
-                "compiler": [6, ">= 2.0.0-beta.1"],
-                "main": function(depth0, helpers, partials, data, blockParams, depths) {
-                    var stack1;
-
-                    return ((stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.instances : depth0), {
-                        "name": "each",
-                        "hash": {},
-                        "fn": this.program(1, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "");
-                },
-                "useData": true,
-                "useDepths": true
             }
         }
     });

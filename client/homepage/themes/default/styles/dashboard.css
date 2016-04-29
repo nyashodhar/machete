@@ -30,6 +30,7 @@ html,
 body,
 section {
     height: 100%;
+    background-color: #fff;
 }
 
 body.noscroll {
@@ -40,8 +41,8 @@ body.noscroll {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
-    background-color: #ddd !important;
-    font-family: citrixsans-regular, Helvetica, Arial, sans-serif;
+    /*background-color: #ddd !important;*/
+    font-family: Helvetica, Arial, sans-serif;
     overflow-x: hidden;
     text-rendering: optimizelegibility;
 }
@@ -142,7 +143,6 @@ body.noscroll {
 }
 
 .dashboard table tbody tr:hover {
-    background-color: #efefef;
     transition: all 0.25s ease-in-out;
 }
 
@@ -223,8 +223,8 @@ body.noscroll {
 }
 
 .grid-item { 
-    margin:5px;
-    padding:5px;
+    margin:10px;
+    padding:10px;
     
   font-size: 12px;
     line-height: 1.4em;
@@ -233,7 +233,7 @@ body.noscroll {
     -moz-border-radius: 5px;
     border-radius: 5px;
     box-shadow:  1px 1px 10px #444;
-    width: 32%; 
+    width: 31%; 
 }
 
 b {

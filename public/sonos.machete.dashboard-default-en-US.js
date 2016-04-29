@@ -1,5 +1,5 @@
 /* File: sonos.machete.dashboard-default-en-US.js */
-/* Generated on Wed Apr 27 2016 20:10:11 GMT-0700 (PDT) by yashodhar.narvaneni */
+/* Generated on Thu Apr 28 2016 17:57:38 GMT-0700 (PDT) by yashodhar.narvaneni */
 
 (function( /*! Packaged using Combine.js v2.6.0 by Michael Holt !*/ ) {
 
@@ -493,7 +493,7 @@
 
                             typeof props.callback === 'function' && props.callback($dlg);
 
-                            $dlg.find('button.btn-default:first').focus();
+                            // $dlg.find('button.btn-default:first').focus();
 
 
                             $dlg.find('button.btn.cancel').one('click', function(e) {
@@ -986,8 +986,14 @@
                                 data = row.toJSON();
                                 data.new = !this.initialized;
                                 data.dir = (idx + 1) % 2 ? 'Left' : 'Right';
-                                include && $els.tb.find('tbody').append(this.templates.row(data));
+                                console.log(data);
+                                include && $els.tb.find('.grid').append(this.templates.row(data));
                             }.bind(this));
+
+                            $els.tb.find('.grid').masonry({
+                                // options
+                                itemSelector: '.grid-item'
+                            });
 
                             this.initialized = true;
 
@@ -1006,7 +1012,7 @@
                                 $els.bd.removeClass('noscroll');
                                 $els.tb.one(animationend, function() {
                                     this.addrows();
-                                    $els. in .focus();
+                                    // $els.in.focus();
                                     $els.cn.removeClass('hidden').addClass('zoomIn');
                                 }.bind(this));
                                 $els.sp.remove();
@@ -1050,6 +1056,7 @@
                             this.setElement($els.wr);
                             this.utils.refresh();
                             this.collections.dashboard.fetch();
+
                             return this;
                         },
 
@@ -1067,7 +1074,7 @@
                             this.views = views;
                             this.inject({
                                 'wakeup': [],
-                                'focus': ['machete.$els'],
+                                //'focus'			: ['machete.$els'],
 
                                 'clock': ['machete.$els'],
                                 'clear': ['machete.$els'],
@@ -1103,6 +1110,7 @@
                             }.bind(this));
 
 
+
                             return this;
                         }
 
@@ -1133,34 +1141,7 @@
         elem.setAttribute('id', 'dashboard-dashboard-default');
         elem.setAttribute('type', 'text/css');
         elem.setAttribute('media', 'all');
-        var stylesheet = '.dashboard .global_panel,body,html,section{height:100%}html{font-size:12px!important}@media screen and (min-width:768px){html{font-size:14px!important}}@media screen and (min-width:992px){html{font-size:16px!important}}@media screen and (min-width:1200px){html{font-size:18px!important}}@media screen and (min-width:1600px){html{font-size:20px!important}}body.noscroll{overflow:hidden}.dashboard{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;background-color:#ddd!important;font-family:citrixsans-regular,Helvetica,Arial,sans-serif;overflow-x:hidden;text-rendering:optimizelegibility}.dashboard div.count{position:absolute;height:2rem;background-color:transparent;z-index:2;left:0;right:0;width:50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:auto}.dashboard div.count span{width:5rem;background-color:rgba(255,255,255,.5);height:100%;margin-top:.25rem;color:#fff;text-align:center;padding-top:.25rem;border-radius:.25rem}.dashboard .spinner-wrapper{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;color:#fff;height:100%}.dashboard .fa-cog{font-size:5rem;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transition:all 2s ease-in-out;transition:all 2s ease-in-out}.dashboard .fa-cog.loaded{font-size:30rem;opacity:0;-webkit-transition:all 2s ease-in-out;transition:all 2s ease-in-out}.dashboard table{background-color:transparent;border-collapse:collapse;box-shadow:0 5px 20px rgba(0,0,0,.15)}.dashboard table thead,.dashboard table thead tr:nth-of-type(even),.dashboard table thead tr:nth-of-type(odd){background:-webkit-linear-gradient(top,#696969 0,#3f3f3f 100%);background:linear-gradient(top,#696969 0,#3f3f3f 100%)}.dashboard thead input{float:right;width:100%;height:1.5rem;margin:0;border:0;padding-right:1.25rem;border-radius:.15rem}.dashboard thead i.fa-times{float:right;top:-1.25rem;position:relative;right:.25rem;color:#ccc;text-shadow:none;cursor:pointer;margin-bottom:-1.25rem;-webkit-transition:color .25s ease-in-out;transition:color .25s ease-in-out}.dashboard thead i.fa-times:hover{color:#777;-webkit-transition:color .25s ease-in-out;transition:color .25s ease-in-out}.dashboard table tbody tr{background-color:#fff;overflow:hidden;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.dashboard table tbody tr:hover{background-color:#efefef;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.dashboard table thead th{color:#fff;text-shadow:0 1px #333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dashboard table tbody td{vertical-align:center;border-bottom:1px solid #ccc;font-size:.7rem;padding-top:1.5rem;padding-bottom:1.5rem}.dashboard table td ul{list-style:none;margin:0;font-size:.7rem}.dashboard table td span.more{color:#06f;cursor:pointer}.dashboard table span.running,.dashboard table span.stopped{border-width:0;border-style:solid;border-radius:100%;float:left;width:1.5rem;height:1.5rem;text-align:center;padding-top:.2rem;margin-left:.7rem;-webkit-transition:background .25s ease-in-out;transition:background .25s ease-in-out}.dashboard table span.stopped{border-color:#C00;color:#C00;background-color:#FFF4E8}.dashboard table span.running{border-color:#008C00;color:#008C00;background-color:#E0FFE0}.dashboard table span.running i{-webkit-animation:throb 2s infinite;animation:throb 2s infinite}.dashboard table td{word-break:break-word}.dashboard table td.name{font-weight:700;padding-left:1rem}.dashboard table td.ip{font-family:monospace}.hidden{display:none!important}@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes throb{from,to{opacity:1}50%{opacity:0}}@keyframes throb{from,to{opacity:1}50%{opacity:0}}';
-        if (elem.styleSheet && document.documentMode < 9) {
-            elem.styleSheet.cssText = stylesheet;
-        } else {
-            elem.innerHTML = stylesheet;
-        }
-        [].slice.call(document.getElementsByTagName('head')[0].children).some(function(tag) {
-            if ('style' === tag.tagName.toLowerCase() || 'link' === tag.tagName.toLowerCase()) {
-                for (var next = tag.nextSibling; next && 1 !== next.nodeType;) {
-                    next = next.nextSibling;
-                }
-                if (next && ('style' !== next.tagName.toLowerCase() && 'link' !== next.tagName.toLowerCase())) {
-                    return next.parentNode.insertBefore(elem, next), !0;
-                }
-            } else {
-                return tag.parentNode.insertBefore(elem, tag.parentNode.firstChild), !1;
-            }
-        });
-    }
-
-
-    /* Injected stylesheet for dashboard-lightbox-default */
-    if (!document.getElementById('dashboard-lightbox-default')) {
-        var elem = document.createElement('style');
-        elem.setAttribute('id', 'dashboard-lightbox-default');
-        elem.setAttribute('type', 'text/css');
-        elem.setAttribute('media', 'all');
-        var stylesheet = 'dialog.lightbox div.cancel{position:fixed;top:1.25rem;right:1.25rem;font-size:2rem;float:right;width:3rem;height:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-shadow:2px 2px 4px rgba(0,0,0,.5);cursor:pointer;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox div.cancel:hover{-webkit-transform:scale(1.5,1.5);-ms-transform:scale(1.5,1.5);transform:scale(1.5,1.5);-webkit-transform-origin:center center;-ms-transform-origin:center center;transform-origin:center center;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox h4{margin:.5rem .5rem 1rem;color:#fff}';
+        var stylesheet = '.dashboard .global_panel,body,html,section{height:100%}html{font-size:12px!important}@media screen and (min-width:768px){html{font-size:14px!important}}@media screen and (min-width:992px){html{font-size:16px!important}}@media screen and (min-width:1200px){html{font-size:18px!important}}@media screen and (min-width:1600px){html{font-size:20px!important}}body.noscroll{overflow:hidden}.dashboard{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;background-color:#ddd!important;font-family:citrixsans-regular,Helvetica,Arial,sans-serif;overflow-x:hidden;text-rendering:optimizelegibility}.dashboard div.count{position:absolute;height:2rem;background-color:transparent;z-index:2;left:0;right:0;width:50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:auto}.dashboard div.count span{width:5rem;background-color:rgba(255,255,255,.5);height:100%;margin-top:.25rem;color:#fff;text-align:center;padding-top:.25rem;border-radius:.25rem}.dashboard .spinner-wrapper{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;color:#fff;height:100%}.dashboard .fa-cog{font-size:5rem;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transition:all 2s ease-in-out;transition:all 2s ease-in-out}.dashboard .fa-cog.loaded{font-size:30rem;opacity:0;-webkit-transition:all 2s ease-in-out;transition:all 2s ease-in-out}.dashboard table{background-color:transparent;border-collapse:collapse;box-shadow:0 5px 20px rgba(0,0,0,.15)}.dashboard table thead,.dashboard table thead tr:nth-of-type(even),.dashboard table thead tr:nth-of-type(odd){background:-webkit-linear-gradient(top,#696969 0,#3f3f3f 100%);background:linear-gradient(top,#696969 0,#3f3f3f 100%)}.dashboard thead input{float:right;width:100%;height:1.5rem;margin:0;border:0;padding-right:1.25rem;border-radius:.15rem}.dashboard thead i.fa-times{float:right;top:-1.25rem;position:relative;right:.25rem;color:#ccc;text-shadow:none;cursor:pointer;margin-bottom:-1.25rem;-webkit-transition:color .25s ease-in-out;transition:color .25s ease-in-out}.dashboard thead i.fa-times:hover{color:#777;-webkit-transition:color .25s ease-in-out;transition:color .25s ease-in-out}.dashboard table tbody tr{background-color:#fff;overflow:hidden;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.dashboard table tbody tr:hover{background-color:#efefef;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.dashboard table thead th{color:#fff;text-shadow:0 1px #333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dashboard table tbody td{vertical-align:center;border-bottom:1px solid #ccc;font-size:.7rem;padding-top:1.5rem;padding-bottom:1.5rem}.dashboard table td ul{list-style:none;margin:0;font-size:.7rem}.dashboard table td span.more{color:#06f;cursor:pointer}.dashboard table span.running,.dashboard table span.stopped{border-width:0;border-style:solid;border-radius:100%;float:left;width:1.5rem;height:1.5rem;text-align:center;padding-top:.2rem;margin-left:.7rem;-webkit-transition:background .25s ease-in-out;transition:background .25s ease-in-out}.dashboard table span.stopped{border-color:#C00;color:#C00;background-color:#FFF4E8}.dashboard table span.running{border-color:#008C00;color:#008C00;background-color:#E0FFE0}.dashboard table span.running i{-webkit-animation:throb 2s infinite;animation:throb 2s infinite}.dashboard table td{word-break:break-word}.dashboard table td.name{font-weight:700;padding-left:1rem}.dashboard table td.ip{font-family:monospace}.hidden{display:none!important}.grid-item{margin:5px;padding:5px;font-size:12px;line-height:1.4em;float:left;border-radius:5px;box-shadow:1px 1px 10px #444;width:32%}b{font-size:14px}@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes throb{from,to{opacity:1}50%{opacity:0}}@keyframes throb{from,to{opacity:1}50%{opacity:0}}';
         if (elem.styleSheet && document.documentMode < 9) {
             elem.styleSheet.cssText = stylesheet;
         } else {
@@ -1207,13 +1188,40 @@
         });
     }
 
+
+    /* Injected stylesheet for dashboard-lightbox-default */
+    if (!document.getElementById('dashboard-lightbox-default')) {
+        var elem = document.createElement('style');
+        elem.setAttribute('id', 'dashboard-lightbox-default');
+        elem.setAttribute('type', 'text/css');
+        elem.setAttribute('media', 'all');
+        var stylesheet = 'dialog.lightbox div.cancel{position:fixed;top:1.25rem;right:1.25rem;font-size:2rem;float:right;width:3rem;height:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-shadow:2px 2px 4px rgba(0,0,0,.5);cursor:pointer;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox div.cancel:hover{-webkit-transform:scale(1.5,1.5);-ms-transform:scale(1.5,1.5);transform:scale(1.5,1.5);-webkit-transform-origin:center center;-ms-transform-origin:center center;transform-origin:center center;-webkit-transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out}dialog.lightbox h4{margin:.5rem .5rem 1rem;color:#fff}';
+        if (elem.styleSheet && document.documentMode < 9) {
+            elem.styleSheet.cssText = stylesheet;
+        } else {
+            elem.innerHTML = stylesheet;
+        }
+        [].slice.call(document.getElementsByTagName('head')[0].children).some(function(tag) {
+            if ('style' === tag.tagName.toLowerCase() || 'link' === tag.tagName.toLowerCase()) {
+                for (var next = tag.nextSibling; next && 1 !== next.nodeType;) {
+                    next = next.nextSibling;
+                }
+                if (next && ('style' !== next.tagName.toLowerCase() && 'link' !== next.tagName.toLowerCase())) {
+                    return next.parentNode.insertBefore(elem, next), !0;
+                }
+            } else {
+                return tag.parentNode.insertBefore(elem, tag.parentNode.firstChild), !1;
+            }
+        });
+    }
+
     /* Compiled HandlebarsJS templates for the "default" theme */
     window.Handlebars && window.Handlebars.set({
         "dashboard": {
             "dashboard": {
                 "compiler": [6, ">= 2.0.0-beta.1"],
                 "main": function(depth0, helpers, partials, data) {
-                    return "<div data-syringe-add=\"machete.$els.sp\" class=\"animated bounceInDown global_panel row\">\n	<div class=\"spinner-wrapper\">\n		<i class=\"fa fa-cog\"></i>\n	</div>\n</div>\n\n<div data-syringe-add=\"machete.$els.cn\" class=\"count hidden animated\"><span>Cached</span></div>\n\n<div data-syringe-add=\"machete.$els.tb\" class=\"hidden animated\">\n	<table>\n		<colgroup>\n			<col width=\"14%\">\n			<col width=\"14%\">\n			<col width=\"30%\">\n			<col width=\"10%\">\n			<col width=\"15%\">\n			<col width=\"8%\">\n			<col width=\"9%\">\n		</colgroup>\n		<thead>\n			<tr>\n				<th><input data-syringe-add=\"machete.$els.in\" placeholder=\"Name\" type=\"text\" /><i title=\"Clear filter\" class=\"fa fa-times\"></i></th>\n				<th>DNS</th>\n				<th>ELB</th>\n				<th>IP Address</th>\n				<th>Version</th>\n				<th>Status</th>\n				<th>PubSub Info</th>\n			</tr>\n		</thead>\n		<tbody></tbody>\n	</table>\n</div>	";
+                    return "<div data-syringe-add=\"machete.$els.sp\" class=\"animated bounceInDown global_panel row\">\n	<div class=\"spinner-wrapper\">\n		<i class=\"fa fa-cog\"></i>\n	</div>\n</div>\n\n<!-- <div data-syringe-add=\"machete.$els.cn\" class=\"count hidden animated\"><span>Cached</span></div> -->\n\n<div data-syringe-add=\"machete.$els.tb\" class=\"hidden animated\">\n	<div class=\"grid\"></div>\n</div>	";
                 },
                 "useData": true
             },
@@ -1292,111 +1300,6 @@
                     "useData": true
                 }
             },
-            "row": {
-                "1": function(depth0, helpers, partials, data, blockParams, depths) {
-                    var stack1, alias1 = this.lambda,
-                        alias2 = this.escapeExpression;
-
-                    return "	<tr id=\"" + alias2(alias1((depths[1] != null ? depths[1].id : depths[1]), depth0)) + "\">\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "name\" colspan=\"" + alias2(alias1(((stack1 = (depth0 != null ? depth0.instances : depth0)) != null ? stack1.length : stack1), depth0)) + "\">" + alias2(alias1((depths[1] != null ? depths[1].name : depths[1]), depth0)) + "</td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "dns\" colspan=\"" + alias2(alias1(((stack1 = (depth0 != null ? depth0.instances : depth0)) != null ? stack1.length : stack1), depth0)) + "\">" + alias2(alias1((depths[1] != null ? depths[1].dnsName : depths[1]), depth0)) + "</td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "elb\" colspan=\"" + alias2(alias1(((stack1 = (depth0 != null ? depth0.instances : depth0)) != null ? stack1.length : stack1), depth0)) + "\">" + alias2(alias1((depths[1] != null ? depths[1].elb : depths[1]), depth0)) + "</td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "ip\">" + alias2(alias1((depth0 != null ? depth0.ip : depth0), depth0)) + "</td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "version\">" + alias2(alias1((depth0 != null ? depth0.version : depth0), depth0)) + "</td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "status\"><span class=\"animated fadeIn " + ((stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.status : depth0), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(4, data, 0, blockParams, depths),
-                        "inverse": this.program(6, data, 0, blockParams, depths),
-                        "data": data
-                    })) != null ? stack1 : "") + "\">" + ((stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.status : depth0), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(8, data, 0, blockParams, depths),
-                        "inverse": this.program(10, data, 0, blockParams, depths),
-                        "data": data
-                    })) != null ? stack1 : "") + "</span></td>\n		<td class=\"" + ((stack1 = helpers['if'].call(depth0, (depths[1] != null ? depths[1]['new'] : depths[1]), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(2, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "") + "pubsub\">\n" + ((stack1 = helpers['if'].call(depth0, ((stack1 = (depth0 != null ? depth0.pubSubInfo : depth0)) != null ? stack1.length : stack1), {
-                        "name": "if",
-                        "hash": {},
-                        "fn": this.program(12, data, 0, blockParams, depths),
-                        "inverse": this.program(14, data, 0, blockParams, depths),
-                        "data": data
-                    })) != null ? stack1 : "") + "		</td>\n	</tr>\n";
-                },
-                "2": function(depth0, helpers, partials, data) {
-                    return "animated fadeIn ";
-                },
-                "4": function(depth0, helpers, partials, data) {
-                    return "running";
-                },
-                "6": function(depth0, helpers, partials, data) {
-                    return "stopped";
-                },
-                "8": function(depth0, helpers, partials, data) {
-                    return "<i class=\"fa fa-check\"></i>";
-                },
-                "10": function(depth0, helpers, partials, data) {
-                    return "Stopped <i class=\"fa fa-times\"></i>";
-                },
-                "12": function(depth0, helpers, partials, data) {
-                    var stack1;
-
-                    return "				<span class=\"more\"><strong>" + this.escapeExpression(this.lambda(((stack1 = (depth0 != null ? depth0.pubSubInfo : depth0)) != null ? stack1.length : stack1), depth0)) + "</strong> Entries</span>\n";
-                },
-                "14": function(depth0, helpers, partials, data) {
-                    return "				N/A\n";
-                },
-                "compiler": [6, ">= 2.0.0-beta.1"],
-                "main": function(depth0, helpers, partials, data, blockParams, depths) {
-                    var stack1;
-
-                    return ((stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.instances : depth0), {
-                        "name": "each",
-                        "hash": {},
-                        "fn": this.program(1, data, 0, blockParams, depths),
-                        "inverse": this.noop,
-                        "data": data
-                    })) != null ? stack1 : "");
-                },
-                "useData": true,
-                "useDepths": true
-            },
             "lightbox": {
                 "1": function(depth0, helpers, partials, data) {
                     var stack1;
@@ -1431,6 +1334,28 @@
                     })) != null ? stack1 : "") + "\n	</div>\n</div>";
                 },
                 "useData": true
+            },
+            "row": {
+                "1": function(depth0, helpers, partials, data, blockParams, depths) {
+                    var stack1, alias1 = this.lambda,
+                        alias2 = this.escapeExpression;
+
+                    return "	<div class=\"grid-item\">\n		<div>\n			<b>" + alias2(alias1((depths[1] != null ? depths[1].name : depths[1]), depth0)) + " </b> \n		</div>\n		<div>\n			<b>DNSName: </b>" + alias2(alias1((depths[1] != null ? depths[1].dnsName : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>ELB: </b> " + alias2(alias1((depths[1] != null ? depths[1].elb : depths[1]), depth0)) + "\n		</div>\n		<div>\n			<b>IP: </b> " + alias2(alias1((depth0 != null ? depth0.ip : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Version: </b> " + alias2(alias1((depth0 != null ? depth0.version : depth0), depth0)) + "\n		</div>\n		<div>\n			<b>Status: </b> " + ((stack1 = alias1((depth0 != null ? depth0.status : depth0), depth0)) != null ? stack1 : "") + "\n		</div>\n	</div>\n";
+                },
+                "compiler": [6, ">= 2.0.0-beta.1"],
+                "main": function(depth0, helpers, partials, data, blockParams, depths) {
+                    var stack1;
+
+                    return ((stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.instances : depth0), {
+                        "name": "each",
+                        "hash": {},
+                        "fn": this.program(1, data, 0, blockParams, depths),
+                        "inverse": this.noop,
+                        "data": data
+                    })) != null ? stack1 : "");
+                },
+                "useData": true,
+                "useDepths": true
             }
         }
     });

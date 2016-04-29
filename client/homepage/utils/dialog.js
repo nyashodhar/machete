@@ -50,7 +50,7 @@
 
 			typeof props.callback === 'function' && props.callback($dlg);
 
-			$dlg.find('button.btn-default:first').focus();
+			// $dlg.find('button.btn-default:first').focus();
 
 
 			$dlg.find('button.btn.cancel').one('click', function (e) {

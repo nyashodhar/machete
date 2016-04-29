@@ -151,8 +151,14 @@
 				data		= row.toJSON();
 				data.new	= !this.initialized;
 				data.dir	= (idx + 1) % 2 ? 'Left' : 'Right';
-				include && $els.tb.find('tbody').append(this.templates.row(data));
+				console.log(data);
+				include && $els.tb.find('.grid').append(this.templates.row(data));
 			}.bind(this));
+
+			$els.tb.find('.grid').masonry({
+				// options
+				itemSelector: '.grid-item'
+			});
 
 			this.initialized = true;
 
@@ -171,7 +177,7 @@
 				$els.bd.removeClass('noscroll');
 				$els.tb.one(animationend, function () {
 					this.addrows();
-					$els.in.focus();
+					// $els.in.focus();
 					$els.cn.removeClass('hidden').addClass('zoomIn');
 				}.bind(this));
 				$els.sp.remove();
@@ -215,6 +221,7 @@
 			this.setElement($els.wr);
 			this.utils.refresh();
 			this.collections.dashboard.fetch();
+
 			return this;
 		},
 
@@ -232,7 +239,7 @@
 			this.views			= views;
 			this.inject({
 				'wakeup'		: [],
-				'focus'			: ['machete.$els'],
+				//'focus'			: ['machete.$els'],
 
 				'clock'			: ['machete.$els'],
 				'clear'			: ['machete.$els'],
@@ -266,6 +273,7 @@
 				this.clock(msg);
 				this.collections.dashboard.fetch();
 			}.bind(this));
+
 
 
 			return this;

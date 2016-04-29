@@ -50,7 +50,9 @@ html(lang="en-US")
 					.script("syringe.mixins.min.js")
 					.script("//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.runtime.min.js").wait()
 					.script("handlebars.set.min.js")
+					.script("masonry.pkgd.min.js")
 					.script("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js")
 					.script("//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.15.35/js/bootstrap-datetimepicker.min.js")
+					.script("masonry-init.js")
 					.script("/#{script}" + (#{minified} ? '.min' : '') + ".js?v=#{version}" + (#{cache} ? "" : ("&" + (new Date).getTime() + "=")));
 				});

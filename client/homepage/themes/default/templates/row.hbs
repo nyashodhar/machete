@@ -1,17 +1,22 @@
 {{#each instances}}
-	<tr id="{{../id}}">
-		<td class="{{#if ../new}}animated fadeIn {{/if}}name" colspan="{{instances.length}}">{{../name}}</td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}dns" colspan="{{instances.length}}">{{../dnsName}}</td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}elb" colspan="{{instances.length}}">{{../elb}}</td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}ip">{{this.ip}}</td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}version">{{this.version}}</td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}status"><span class="animated fadeIn {{#if this.status}}running{{else}}stopped{{/if}}">{{#if this.status}}<i class="fa fa-check"></i>{{else}}Stopped <i class="fa fa-times"></i>{{/if}}</span></td>
-		<td class="{{#if ../new}}animated fadeIn {{/if}}pubsub">
-			{{#if this.pubSubInfo.length}}
-				<span class="more"><strong>{{this.pubSubInfo.length}}</strong> Entries</span>
-			{{else}}
-				N/A
-			{{/if}}
-		</td>
-	</tr>
+	<div class="grid-item">
+		<div>
+			<b>{{../name}} </b> 
+		</div>
+		<div>
+			<b>DNSName: </b>{{../dnsName}}
+		</div>
+		<div>
+			<b>ELB: </b> {{../elb}}
+		</div>
+		<div>
+			<b>IP: </b> {{this.ip}}
+		</div>
+		<div>
+			<b>Version: </b> {{this.version}}
+		</div>
+		<div>
+			<b>Status: </b> {{{this.status}}}
+		</div>
+	</div>
 {{/each}}
